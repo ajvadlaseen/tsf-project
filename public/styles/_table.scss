@@ -1,0 +1,118 @@
+table {
+    border-collapse: collapse;
+    margin: 0;
+    margin-top: 1.5rem;
+    padding: 0;
+    width: 100%;
+    table-layout: fixed;
+}
+
+table tr {
+    background-color: $light;
+    color: $dark;
+    &:nth-of-type(even) {
+        background-color: #e7e7e7;
+    }
+
+    &:last-of-type {
+        td:first-child {
+            border-radius: 0 0 0 15px;
+        }
+        td:last-child {
+            border-radius: 0 0 15px 0;
+        }
+    }
+}
+table th {
+    background-color: $dark;
+    color: white;
+
+    &:first-child {
+        border-radius: 15px 0 0 0;
+    }
+    &:last-child {
+        border-radius: 0 15px 0 0;
+    }
+}
+table th,
+table td {
+    padding: 0.625rem;
+    text-align: center;
+}
+
+#thead-accounts th,
+#tbody-accounts td {
+    @include breakpoint-up(large) {
+        &:nth-child(3) {
+            width: 45%;
+        }
+    }
+}
+
+#thead-transactions th,
+#tbody-transactions td {
+    @include breakpoint-up(large) {
+        &:first-child {
+            width: 10%;
+        }
+        &:nth-child(4) {
+            width: 20%;
+        }
+        &:last-child {
+            width: 15%;
+        }
+    }
+}
+
+table th {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+}
+table td {
+    &:nth-child(4) {
+        color: green;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    table {
+        border: 0;
+    }
+
+    table thead {
+        display: none;
+    }
+
+    table tr {
+        display: block;
+        margin-bottom: 0.625rem;
+        border-radius: 15px;
+    }
+
+    table td {
+        display: block;
+        font-size: 1rem;
+        font-weight: 500;
+        text-align: right;
+    }
+
+    table td::before {
+        color: $dark;
+        content: attr(label);
+        float: left;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+}
+
+.transfer {
+    @include breakpoint-down(medium) {
+        h2 {
+            font-size: 1.75rem;
+        }
+        button {
+            font-size: $font-sm;
+            margin-top: 0;
+        }
+    }
+}

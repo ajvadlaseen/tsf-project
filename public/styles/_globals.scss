@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    line-height: 1.5;
+    font-size: $font-lg;
+    color: $semi-light;
+    font-family: 'Barlow', sans-serif;
+    font-weight: 400;
+
+    &.disable-scroll {
+        overflow: hidden;
+    }
+}
+
+a,
+a:visited,
+a:hover {
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.flex {
+    display: flex;
+
+    &-jc-sb {
+        justify-content: space-between;
+    }
+
+    &-jc-sa {
+        justify-content: space-around;
+    }
+
+    &-jc-c {
+        justify-content: center;
+    }
+
+    &-ai-c {
+        align-items: center;
+    }
+}
+
+.container {
+    padding: 1.125rem 2rem;
+    max-width: 1250px;
+    margin: auto;
+}
+
+.hide-in-mobile {
+    @include breakpoint-down(medium) {
+        display: none;
+    }
+}
+
+.hide-in-desktop {
+    @include breakpoint-up(large) {
+        display: none;
+    }
+}
+
+button,
+.button {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    padding: 0.875rem 1.875rem;
+    cursor: pointer;
+    border: 0;
+    border-radius: 50px;
+    background-color: $dark;
+    color: white;
+    transition: opacity 200ms ease-in-out;
+}
+
+button:hover,
+.button:hover {
+    opacity: 0.85;
+}
+
+#errorMsg {
+    text-align: center;
+
+    color: #d10830;
+    background-color: pink;
+}
+
+h3#errorMsg {
+    margin: 0% 30% 0 30%;
+}

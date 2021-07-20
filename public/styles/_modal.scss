@@ -1,0 +1,107 @@
+.modal {
+    display: none;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 150;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: visible;
+
+    .modalContent {
+        color: $dark;
+        background-color: white;
+        border-radius: 10px;
+        margin: 7% auto;
+        padding: 1.5rem;
+        width: 40%;
+        box-shadow: 0px 5px 10px 0 rgba(0, 0, 0, 0.4);
+
+        @include breakpoint-down(medium) {
+            margin: 20% auto;
+            width: 90%;
+            padding: 0.75rem;
+            h3 {
+                text-align: center;
+            }
+        }
+        .closeBtn {
+            float: right;
+            color: dimgray;
+            font-size: 2.2rem;
+            margin: -8px 8px 0 0;
+
+            &:hover,
+            &:focus {
+                cursor: pointer;
+                color: $dark;
+            }
+        }
+
+        .formContainer {
+            padding: 1rem 1rem;
+            .formBtn {
+                justify-content: space-between;
+                margin: 0.5rem;
+            }
+            #resetBtn {
+                background-color: $light;
+                color: $dark;
+            }
+        }
+
+        .formSection {
+            color: $semi-dark;
+            flex-direction: column;
+            max-width: 70%;
+            margin: 1rem;
+
+            @include breakpoint-down(medium) {
+                max-width: 90%;
+
+                #transferAmount {
+                    max-width: 55%;
+                }
+            }
+
+            input {
+                border-radius: 0.75rem;
+                border: 1px solid $dark;
+                outline: none;
+                height: 2rem;
+                color: $dark;
+                font-family: unset;
+                font-size: $font-med;
+                padding: 0.75rem;
+
+                &:focus {
+                    font-weight: 500;
+                }
+            }
+            #rsSymbol {
+                margin-right: 0.3rem;
+            }
+            #transferAmount {
+                margin-top: 0.3rem;
+                max-width: 35%;
+            }
+        }
+        .afterTransact {
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 1rem;
+            background-color: white;
+            min-height: 24rem;
+            img {
+                max-width: fit-content;
+            }
+            p {
+                padding-top: 1rem;
+                font-size: 2.2rem;
+            }
+            text-align: center;
+        }
+    }
+}

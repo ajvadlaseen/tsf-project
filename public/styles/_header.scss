@@ -1,0 +1,114 @@
+.header {
+    background-color: $light;
+    // position: sticky;
+    // width: 100%;
+    // z-index: 99;
+    @include breakpoint-up(large) {
+        padding-left: 6.25rem;
+        padding-right: 6.25rem;
+    }
+
+    &-logo {
+        img {
+            width: 2.7rem;
+        }
+        @include breakpoint-up(large) {
+            &::after {
+                content: 'SPARKS BANKING';
+                padding-left: 1rem;
+                color: $semi-light;
+                margin-top: 0.9rem;
+            }
+        }
+    }
+    .navbar {
+        z-index: 65;
+        position: relative;
+        background-color: $light;
+    }
+
+    &-menu {
+        z-index: 65;
+        background-color: $light;
+        border-radius: 8px;
+        position: absolute;
+        margin: 2rem;
+        width: calc(100% - 4rem);
+        a {
+            margin: 1rem 0;
+            display: block;
+            color: $semi-light;
+            text-align: center;
+        }
+    }
+
+    &-toggle {
+        z-index: 65;
+        > span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: $dark;
+            margin-bottom: 5px;
+            border-radius: 3px;
+            transition: all 200ms ease-in-out;
+            transform-origin: 1px 2px;
+        }
+    }
+    &-links {
+        a {
+            position: relative;
+            font-size: $font-med;
+            transition: color 200ms ease-in-out;
+            color: $semi-light;
+
+            &:not(:last-child) {
+                margin-right: 32px;
+            }
+            &:hover {
+                color: $dark;
+                &::after {
+                    opacity: 1;
+                }
+            }
+
+            &::after {
+                content: '';
+                display: block;
+                position: absolute;
+                background-color: $semi-light;
+                height: 3px;
+                left: 0;
+                right: 0;
+                bottom: -25px;
+                opacity: 0;
+                transition: opacity 200ms ease-in-out;
+            }
+        }
+    }
+
+    &.open {
+        .header-toggle {
+            > span:first-child {
+                transform: rotate(45deg);
+            }
+            > span:nth-child(2) {
+                opacity: 0;
+            }
+            > span:last-child {
+                transform: rotate(-45deg);
+            }
+        }
+    }
+
+    .overlay {
+        z-index: 55;
+        visibility: hidden;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-image: linear-gradient($semi-light, transparent);
+    }
+}

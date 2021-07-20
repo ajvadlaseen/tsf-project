@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="styles/style.css" />
+        <title>Spark Accounts</title>
+    </head>
+    <body>
+        <header class="header">
+            <div class="overlay has-fade"></div>
+            <nav class="flex flex-jc-sb flex-ai-c navbar container">
+                <a href="/" class="header-logo"
+                    ><img src="./images/rupee-coin.svg" alt="logo"
+                /></a>
+
+                <a
+                    id="hamburgerMenu"
+                    href="#"
+                    class="header-toggle hide-in-desktop"
+                >
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </a>
+                <div class="header-links hide-in-mobile">
+                    <a href="accounts.html">Accounts</a>
+                    <a href="transactions.html">Transactions</a>
+                    <a href="about.html">About</a>
+                </div>
+            </nav>
+
+            <div class="header-menu hide-in-desktop container has-fade">
+                <a href="accounts.html">Accounts</a>
+                <a href="transactions.html">Transactions</a>
+                <a href="about.html">About</a>
+            </div>
+        </header>
+
+        <div class="container">
+            <div class="flex flex-jc-sb transfer">
+                <h2>Accounts</h2>
+                <button id="transferButton" class="button">Transfer</button>
+            </div>
+            <table>
+                <thead id="thead-accounts">
+                    <tr>
+                        <th>UID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Balance</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody-accounts"></tbody>
+            </table
+        </div>
+
+        <div id="transferModal" class="modal">
+            <div class="modalContent">
+                <span id="modalCloseBtn" class="closeBtn">&times;</span>
+                <h3>Enter Credentials</h3>
+                <form class="formContainer" action="">
+                    <div class="flex flex-jc-sb formSection">
+                        <label for="from-acc">From</label>
+                        <input
+                            type="email"
+                            name="fromAcc"
+                            id="sender"
+                            required
+                            placeholder="Enter Sender's email id"
+                        />
+                    </div>
+                    <div class="flex flex-jc-sb formSection">
+                        <label for="to-acc">To</label>
+                        <input
+                            type="email"
+                            name="toAcc"
+                            id="receiver"
+                            required
+                            placeholder="Enter Receiver's email id"
+                        />
+                    </div>
+                    <div class="flex flex-jc-sb formSection">
+                        <label for="amount">Amount</label>
+                        <div class="flex">
+                            <span id="rsSymbol">₹</span>
+                            <input
+                                type="number"
+                                min="1"
+                                name="amount"
+                                id="transferAmount"
+                                required
+                                placeholder="Amount"
+                            />
+                        </div>
+                    </div>
+                    <div class="formBtn flex">
+                        <button type="reset" id="resetBtn" class="button">
+                            Reset
+                        </button>
+                        <input
+                            id="submitBtn"
+                            class="button"
+                            type="submit"
+                            value="Transfer"
+                        />
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+            integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        ></script>
+        <script src="/js/script.js"></script>
+    </body>
+</html>

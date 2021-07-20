@@ -1,0 +1,19 @@
+.footer {
+    background-image: linear-gradient(white, $light 35%);
+    color: $dark;
+    font-size: 2.5rem;
+    max-width: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    justify-items: center;
+    align-items: center;
+
+    @include breakpoint-down(medium) {
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: 1fr minmax(100px, max-content);
+
+        font-size: 2rem;
+    }
+}
